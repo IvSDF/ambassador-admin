@@ -35,8 +35,8 @@
 
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
-import Menu from "@/components/Menu.vue";
-import Nav from "@/components/Nav.vue";
+import Menu from "../components/Menu.vue";
+import Nav from "../components/Nav.vue";
 
 @Component({
   components: {Nav, Menu}
