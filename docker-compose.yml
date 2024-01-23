@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+
+  app:
+    build:
+      context: ./
+      dockerfile: _docker/app/Dockerfile
+    volumes:
+      - ./:/var/www
+    ports:
+      - 8080:8080
+    container_name: ambassadorAdmin_app
