@@ -21,4 +21,3 @@ services:
     ports:
       - 8080:8080
     container_name: ambassadorAdmin_app
-
