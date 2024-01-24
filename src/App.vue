@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import  Vue from 'vue';
 import Nav from "@/components/Nav.vue";
 import Menu from "@/components/Menu.vue";
 

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Nav/>
+    <Nav :user="user" />
     <div class="container-fluid">
       <div class="row">
         <Menu/>
@@ -33,16 +33,30 @@
   </v-app>
 </template>
 
-<script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
+<script>
 import Menu from "../components/Menu.vue";
 import Nav from "../components/Nav.vue";
+import axios from "axios";
+import {User} from "@/models/user";
 
-@Component({
-  components: {Nav, Menu}
-})
-export default class Layout extends Vue {
+export default {
+  name: "Layout",
+  components: {Menu, Nav},
+  data(){
+    return {
+      user: new User(),
+    }
+  },
 
+  async mounted() {
+    try {
+      const {data} = await axios.get('user');
+
+      this.user = data;
+    } catch (e) {
+      await this.$router.push('/login')
+    }
+  }
 }
 </script>
 
