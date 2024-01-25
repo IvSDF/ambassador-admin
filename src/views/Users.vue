@@ -1,22 +1,24 @@
 <template>
-     <table class="table table-striped table-sm">
-    <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr v-for="user in users" :key="user.id">
-      <td>{{ user.id }}</td>
-      <td>{{ user.first_name }} {{ user.last_name }}</td>
-      <td>{{ user.email }}</td>
-      <td></td>
-    </tr>
-    </tbody>
-  </table>
+  <v-simple-table>
+    <template v-slot:default>
+      <thead>
+      <tr>
+        <th class="text-left">#</th>
+        <th class="text-left">Name</th>
+        <th class="text-left">Email</th>
+        <th class="text-left">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="user in users" :key="user.id">
+        <td>{{ user.id }}</td>
+        <td>{{ user.first_name }} {{ user.last_name }}</td>
+        <td>{{ user.email }}</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
 </template>
 
 <script>
