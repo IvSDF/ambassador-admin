@@ -14,7 +14,11 @@
         <td>{{ user.id }}</td>
         <td>{{ user.first_name }} {{ user.last_name }}</td>
         <td>{{ user.email }}</td>
-        <td></td>
+        <td>
+          <v-btn :href="`/users/${user.id}/links`" color="primary" elevation="2">
+          View
+        </v-btn>
+        </td>
       </tr>
       </tbody>
     </template>
