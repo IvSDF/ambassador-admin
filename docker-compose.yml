@@ -1,6 +1,17 @@
 version: '3.5'
 services:
 
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www
+      - ./_docker/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    container_name: ambassadorAdmin_nginx
+
   app:
     build:
       context: ./
@@ -10,3 +21,4 @@ services:
     ports:
       - 8080:8080
     container_name: ambassadorAdmin_app
+

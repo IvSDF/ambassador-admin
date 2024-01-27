@@ -45,4 +45,3 @@ RUN pecl install -o -f redis \
 CMD ["php-fpm"]
 
 EXPOSE 80
-WORKDIR /var/www/
