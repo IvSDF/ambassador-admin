@@ -34,8 +34,6 @@
 
 <script>
 import axios from "axios";
-import {id} from "vuetify/src/locale";
-
 export default {
   name: "Products",
   data() {
