@@ -5,6 +5,7 @@ import Login from "../views/Login.vue";
 import Register from "@/views/Register.vue";
 import Users from "@/views/Users.vue";
 import Links from "@/views/Links.vue";
+import Products from "@/views/products/Products.vue";
 
 Vue.use(VueRouter)
 
@@ -17,7 +18,8 @@ const routes: Array<RouteConfig> = [
     children: [
       { path: '', redirect: '/users' },
       { path: '/users', component: Users },
-      { path: '/users/:id/links', component: Links }
+      { path: '/users/:id/links', component: Links },
+      { path: '/products', component: Products }
     ]
   }
 ]
