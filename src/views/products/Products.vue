@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="pt-3 pb-2 mb-3 border-bottom">
-      <v-btn href="/product/create/" variant="container" color="primary">Add</v-btn>
+      <v-btn href="/product/create" variant="container" color="primary">Add</v-btn>
     </div>
     <v-simple-table>
       <template v-slot:default>
@@ -23,9 +23,12 @@
           </td>
           <td>{{ product.title }}</td>
           <td>{{ product.description }}</td>
-          <td>{{ product.price}}</td>
+          <td>{{ product.price }}</td>
           <td>
-            <v-btn color="error" @click="del(product.id)">Delete</v-btn>
+            <v-btn-toggle>
+              <v-btn color="primary" :href="`/product/${product.id}/edit`">Edit</v-btn>
+              <v-btn color="error" @click="del(product.id)">Delete</v-btn>
+            </v-btn-toggle>
           </td>
         </tr>
         </tbody>
